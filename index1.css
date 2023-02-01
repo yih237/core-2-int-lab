@@ -1,0 +1,61 @@
+
+html {
+    background-color: rgba(0, 0, 0, 1);}
+
+body {margin:10vh;
+    font-family: "ltc-caslon-pro", "times new roman", serif;
+    background-color: rgba(0, 0, 0, 1);}
+
+h1{
+    font-weight:400;
+    font-size:60px;
+
+}
+
+.home{
+color: rgba(255, 255, 255, 1)}
+
+details {
+    user-select: none;
+  }
+
+  details>summary span.icon {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s;
+    margin-left: auto;
+  }
+
+  details[open] summary span.icon {
+    transform: rotate(180deg);
+  }
+
+  summary {
+    display: flex;
+    cursor: pointer;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary:hover {
+      background-color: rgb(68, 68, 68);
+  }
+h2:hover {
+    text-decoration: underline;
+    color:beige;
+}
+a {
+    color:white;
+    text-decoration: none;
+}
+
+a:hover {
+    color:rgb(123, 156, 228)
+}
+
+a:visited {
+    color:white;
+    text-decoration: overline;
+}

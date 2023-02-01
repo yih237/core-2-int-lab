@@ -1,0 +1,31 @@
+section {
+    margin-top: 100px;
+    margin-left: 20px;
+    display: block;
+    font-size:18;
+    font-weight:500;
+}
+
+.reading {
+    display: grid;
+    grid-template-columns: 1;
+    padding: 3px;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+}
+
+.subtitle {
+    font-size: 22px;
+    font-weight: 200;
+}
+
+.response {
+    margin-top: 0.3em;
+    text-align: justify;
+}
