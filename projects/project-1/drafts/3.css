@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&family=Manrope:wght@200;300;400;500&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap');/* BROWSER SIZE 1317 x 795 */
+@import url("https://use.typekit.net/sdq2efn.css");
+html {
+  box-sizing: border-box;
+  cursor: round;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+    background-color: #000000;
+    flex-direction: column;
+    filter: grayscale();
+    margin: 0;
+    text-shadow: 0 0 10px #fff, 12px -14px 20px #fff, -14px 16px 30px #a9a9a9, 0 0 40px #e60073;
+    height: 100%;    
+}
+
+
+
+
+.hover-class:hover {
+  color: rgb(255, 251, 0)
+}
+
+
+div.handcoding-is-fun {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right::-webkit-scrollbar {
+ width: 10px;
+ border-radius: 60px;
+ overflow: hidden;
+}
+
+/* Track */
+.right::-webkit-scrollbar-track {
+  background: #000000; 
+  overflow: hidden;
+}
+ 
+/* Handle */
+.right::-webkit-scrollbar-thumb {
+  background: rgb(119, 119, 119); 
+  overflow: hidden;
+}
+
+/* Handle on hover */
+.right::-webkit-scrollbar-thumb:hover {
+  background: rgb(119, 119, 119); 
+  overflow: hidden;
+}
+
+
+
+.left::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 60px;
+  overflow: hidden;
+}
+
+.left::-webkit-scrollbar::-webkit-scrollbar-track {
+  background: #686868; 
+  overflow: hidden;
+}
+ 
+.left::-webkit-scrollbar-thumb {
+  background: rgb(119, 119, 119); 
+  overflow: hidden;
+}
+
+.left::-webkit-scrollbar-thumb:hover {
+  background: rgb(80, 80, 80); 
+  overflow: hidden;
+}
+
+
+.left,
+.right {
+  height: 50vh;
+  width: 45%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.left {
+    margin-left: 0;
+    padding:0;
+    justify-content: left;
+}
+
+
+
+.left .slide { justify-content: flex-end; }
+.right .slide { justify-content: flex-start; }
+.slide p { margin: 0; font-size: 1em;}
+.slide p.lg { font-size: 1em;}
+.slide p.lg em { font-size: 1em; }
+.left .slide p { padding-right: 30px; }
+.right .slide p { padding-left: 30px;} 
+
+
+a {
+color: white;
+text-decoration: none;
+margin-right: 30px;
+}
+
+a:hover{
+  color: rgb(255, 230, 0)
+}
+
+.text span {
+  display: block;
+  margin-bottom: 4px;
+  font-size: .675em;
+}
+.text span.scroll {
+  margin: 20px;
+  font-size: 2rem;
+  letter-spacing: .03em;
+}
+
+@media screen and (min-width: 768px) {
+  .text {
+    font-size: 1.325em;
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  h1{
+    font-size: 3rem;
+    font-family: "reiner-script", sans-serif;
+font-weight: 400;
+font-style: normal;
+  }
+}
+
+
+
+  h2, h3, h4, h5, h6 {
+    font-family: "Crimson Text ", serif;
+    
+  }
+  
+
+  
+  p{
+    grid-template-columns: auto auto;
+    font-family: 'Crimson Text', sans-serif;
+    font-size: 1rem;
+    margin-bottom:0.5rem;
+    line-height: 60px;
+  }
+  

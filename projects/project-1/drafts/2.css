@@ -1,0 +1,72 @@
+@import url("https://use.typekit.net/sdq2efn.css");
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "scotch-display", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    width:auto;
+    height:5000px;
+    margin-left:5%;
+  }
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  
+  p {
+    font-size: 20pt;
+    margin-top: 0;
+  }
+  
+  #sub-title {
+    font-size: 20pt;
+  }
+  
+  img {
+    height: 100vh;
+    margin-top: 40px;
+    margin-left: 10%;
+  }
+  
+  #fog{
+    width: 1300px;
+    height: auto;
+    position: absolute;
+    left: 0.05vw;
+    top: 0.2vh;
+    margin: 0;
+    opacity: 1;
+  }
+  
+  #fog:hover{
+opacity: .3;  }
+
+#fog1{
+    width: 1300px;
+    height: auto;
+    position: absolute;
+    left: 0.05vw;
+    top: 1.2vh;
+    margin: 0;
+    opacity: 1;
+  }
+  
+  #fog:hover{
+opacity: .3;  }
+  
+  
+  .text{
+    width: 300px;
+    height:auto;
+    display:inline-block;
+    margin-bottom:6%;
+    margin-right: 6%;
+  }
+  
+  
+  
+ 

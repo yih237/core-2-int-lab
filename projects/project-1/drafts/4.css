@@ -1,0 +1,56 @@
+@import url("https://use.typekit.net/sdq2efn.css");
+
+BODY.enterPage{
+    cursor:hand;
+  }
+
+
+body{
+  padding: 40px;
+  background-color: #000000;  
+  flex-direction: column;
+  filter: grayscale();
+  margin: 0;
+  text-shadow: 0 0 10px #fff, 12px -14px 20px #fff, -14px 16px 30px #a9a9a9, 0 0 40px #e60073;
+  height: 100%;    
+  background-image: url("/core-2-int-lab/projects/project-1/assets/fog2.png");
+}
+
+.container{
+    display: flex;
+    justify-content: right;
+  
+}
+
+.btn {
+    border-radius: 50%;
+    width: 80px;
+    border: 3px white;
+    padding: 20px;
+    background-color: #000000;
+    margin: top 80%;
+    margin: left 40%;
+
+    }
+
+
+p {
+  white-space: nowrap;
+  overflow: hidden;    
+  font-family: 'monarcha', serif;  
+  font-size: 60px;
+  color: rgba(255,255,255,.70);
+
+}
+
+/* Animation */
+p {
+  animation: animated-text 2s steps(30,end) 1s 1 normal both;
+}
+
+/* text animation */
+
+@keyframes animated-text{
+  from{width: 0px;}
+  to{width: 472px;}
+}
