@@ -1,0 +1,24 @@
+main{
+    background: fff;
+    width: 59vw;
+    margin: 0 auto
+}
+
+article {
+    display: grid;
+    margin:0 auto;
+    grid-template-columns: repeat(auto-fill, 100px);
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: minmax(300px, max-content);
+    gap: 1rem;
+}
+
+section {
+    background: ccc;
+    padding: 1rem
+}
+
+nav ul {
+    display: flex;
+    background-color: #222;
+}

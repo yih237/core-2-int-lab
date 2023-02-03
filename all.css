@@ -48,3 +48,12 @@ table {
     display: table;
     content: " ";
 }
+
+img{
+	max-width: 100%;
+	height:auto
+}
+
+audio, canvas, iframe, img, svg, video {
+	vertical-align: middle;
+}
