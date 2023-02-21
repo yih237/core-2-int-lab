@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #box {
+      height: 100px;
+      width: 100px;
+      overflow-y: scroll;
+    }
+  </style>
+</head>
+<body>
+  <div id="box">
+    <p>This is some content in the box that will be scrollable.</p>
+    <p>This is some content in the box that will be scrollable.</p>
+    <p>This is some content in the box that will be scrollable.</p>
+    <p>This is some content in the box that will be scrollable.</p>
+    <p>This is some content in the box that will be scrollable.</p>
+  </div>
+
+  <script>
+    const box = document.getElementById("box");
+
+    box.addEventListener("scroll", function() {
+      console.log("The box is being scrolled!");
+    });
+  </script>
+</body>
+</html>

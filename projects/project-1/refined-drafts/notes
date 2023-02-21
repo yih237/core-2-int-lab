@@ -1,0 +1,8 @@
+- simplify code: regroup, set up a new folder, index.html, etc. 
+- get html straight
+class= "1 2" (2 class names)
+proper paragraph structures. start with no css involved 
+- use inspector (chrome), test out css
+- set up css file with basic selectors, e.g. a rule for p
+- image in the background instead of overlay.
+- set background image to body, container with gradient. (not in the same element)

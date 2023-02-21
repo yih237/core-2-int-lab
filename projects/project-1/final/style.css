@@ -1,0 +1,291 @@
+/* import adobe and google fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Crimson+Text&family=Gloock&family=Manrope:wght@200;300;400;500&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap');
+@import url("https://use.typekit.net/sdq2efn.css");
+
+
+/* universal */
+
+* {
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+    color: inherit;
+    text-align: left;
+    background: transparent;
+  }
+
+  body {
+    overflow: hidden;
+    background-color: #999;
+    margin: 0;
+    padding: 0;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='25' height='25'><circle cx='12.5' cy='12.5' r='11' fill='none' stroke='lightgray' stroke-width='2'/></svg>") 12.5 12.5, auto;
+}
+
+  .text-container {
+    position: relative;
+  }
+  
+/* background noise */
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+
+}
+
+/* background image */
+.bg2 {
+    background-image: url('../assets/bg-texture.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+  }
+  
+
+
+/* background color and gradient */
+
+.bg {
+    height: 850vh; 
+    background: linear-gradient(to bottom, rgb(227, 227, 227), #000, rgb(227,227,227));
+    opacity:0.9;    
+}
+
+/* instructions of use */
+#instructions {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;  
+    transform: translate(-50%, -50%);
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#instructions .instructions {
+    font-size: 1rem;
+    margin: 0;
+    color:rgb(95, 95, 95);
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    margin-bottom:0.9vh;
+    text-align: center;
+}
+  
+#instructions h2 {
+    font-size: 4rem;
+    color:white;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    text-align: center;
+}
+
+#instructions h2,
+#instructions p {
+  margin: 0;
+}
+
+
+/* fog */
+
+.fog {
+    position: absolute;
+    top: 0;
+    left: calc(100% - 500px);
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/cloud1.png);
+    background-size: cover;
+    opacity:0.5;
+    filter: blur(12px);
+    z-index: 2;
+  }
+  
+
+/* bottom button */
+
+/* button{
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='25' height='25'><circle cx='12.5' cy='12.5' r='12.5' fill='white'/></svg>") 12.5 12.5, auto;
+} */
+
+.button {
+    width: 8vw;
+    height: 8vw;
+    border-radius: 50%;
+    background-color: black;
+    position: fixed;
+    z-index: 999;
+    bottom:10px;
+    opacity:0.6;
+  }
+
+  #scroll-up-button {
+    left: 10px;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="lightgray" width="33px" height="33px"><path d="M12 8.6L6.7 14 8 15.3 12 11.3 16 15.3 17.3 14 12 8.6z"/><path d="M0 0h24v24H0V0z" fill="none"/></svg>'), auto;
+}
+  
+  #scroll-down-button {
+    right: 10px;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="lightgray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22px" height="22px"><path d="M6 9l6 6 6-6" /></svg>'), auto;
+}
+  
+
+/* for normal display */
+.book {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 48vw;
+    text-align: left;
+    line-height: 1.6;
+    border: 0px solid black;
+    padding: 10px;
+    font-size: 85%;
+    color: rgb(69, 69, 69);
+    background-color: transparent;
+    z-index: 1;
+  }
+
+  p {
+    font-family: 'Cormorant Garamond', serif;
+    mix-blend-mode: difference;
+    margin-bottom:13vh;
+    font-size: 2vh;
+}
+
+.title {
+    font-family: "canto", serif;
+    font-weight: 400;
+    font-style: normal;
+    color:rgb(92, 92, 92);
+    text-shadow: 0px 0px 30px #3b3b3b;
+    font-size: 6.8vh;
+    margin-top:30vh;
+    margin-bottom:35vh;
+  }
+
+/* 1000-1100px */
+
+@media only screen and (min-width: 1000px) and (max-width: 1100px) {
+    .bg{
+        height: 790vh; 
+    }
+    }
+    
+
+
+/* 1100-1300px */
+
+@media only screen and (min-width: 1100px) and (max-width: 1300px) {
+.bg{
+    height: 760vh; 
+
+}
+}
+/* 800-1300px */
+
+@media only screen and (min-width: 800px) and (max-width: 1300px) {
+
+.book{
+    width:80vw;
+}
+
+}
+  
+
+
+/* make text glow while selecting */
+.book::selection {
+    color: white;
+    text-shadow: 0 0 10px black;
+  }
+  
+
+/* different paragraphs */
+
+.p7{
+    color:rgb(105, 105, 105)
+
+}
+
+.p9{
+    color:rgb(83, 83, 83)
+
+}
+.p11{
+    color:rgb(114, 114, 114)
+}
+
+.p13:hover{
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    color:#ffffff;
+}
+
+
+
+.p22:hover{
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    color:#212121;
+    font-weight: 600;
+}
+
+
+
+.group1{
+    color:rgb(148, 148, 148)
+}
+
+.group2{
+    color:rgb(103, 103, 103);
+}
+
+.group3{
+    color: rgb(181, 181, 181);;
+}
+
+.group4{
+    color: rgb(141, 141, 141);;
+}
+
+
+/* glitch */
+
+#glitch {
+    text-shadow: 0 0 5px rgba(255,255,255,0.5);
+  }
+  
+
+/* different styles for each paragraph... */
+
+/* .p1 {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .p1::before, .p1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url("../assets/Fog1.png");
+    background-size: cover;
+    filter: blur(10px);
+    opacity:0.6;
+  }
+*/
+

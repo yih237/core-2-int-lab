@@ -292,4 +292,8 @@ html{
     margin-bottom:0.5em;
     display:inline-block
 }
+
+.link{
+    text-decoration: none;
+}
 /*# sourceMappingURL=style.css.map */

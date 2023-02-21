@@ -1,0 +1,12 @@
+:root { 
+  --black: #000000;
+  --white: #ffffff;
+ 
+  --font-size-l: 48px;
+  --font-size-m: 18px;
+  --font-size-s: 13px;
+ 
+  --font-family-im_fell_french_canon-regular: "IM FELL French Canon-Regular", serif;
+  --font-family-times_new_roman-regular: 'Crimson Text', serif;
+
+}

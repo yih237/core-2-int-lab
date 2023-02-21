@@ -50,3 +50,25 @@ color: rgb(158, 158, 158);
   font-size: 20px;
 
 }
+
+.fit4 {
+    font-family: "inge-variable", sans-serif;
+    font-variation-settings: "slnt" -20;
+    font-size: 100px;
+    margin: 0;
+    transition: all 1000ms ease-in-out;
+    color: rgb(158, 158, 158);
+  
+  }
+  
+  .fit4:hover {
+    font-family: "inge-variable", sans-serif;
+    font-variation-settings: "slnt" 20;
+    color: rgb(168, 169, 227);
+    font-size: 100px;
+  
+  }
+
+  div {
+    margin-left: 50px;
+  }
