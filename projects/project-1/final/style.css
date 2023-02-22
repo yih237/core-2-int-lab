@@ -183,6 +183,7 @@ canvas {
     margin-bottom:35vh;
   }
 
+  
 /* 1000-1100px */
 
 @media only screen and (min-width: 1000px) and (max-width: 1100px) {
@@ -279,14 +280,10 @@ p {
 
 }
 
-
-
-
-
 /* make text glow while selecting */
 .book::selection {
     color: white;
-    text-shadow: 0 0 10px black;
+    text-shadow: 0 0 10px rgb(255, 255, 255);
   }
   
 
@@ -310,8 +307,6 @@ p {
     color:#ffffff;
 }
 
-
-
 .p22:hover{
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
     color:#212121;
@@ -319,6 +314,11 @@ p {
 }
 
 
+.p25:hover{
+  text-shadow: 0 0 10px rgba(138, 138, 138, 0.8);
+  color:#aaaaaa;
+  font-weight: 600;
+}
 
 .group1{
     color:rgb(148, 148, 148)
