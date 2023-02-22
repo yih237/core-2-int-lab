@@ -229,6 +229,10 @@ canvas {
     width:75vw;
 }
 
+h1{
+  line-height: 10px;
+}
+
 /* .button-container {
   position: fixed;
   bottom: 0;
