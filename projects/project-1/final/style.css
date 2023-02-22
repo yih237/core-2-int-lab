@@ -120,6 +120,10 @@ canvas {
     cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='25' height='25'><circle cx='12.5' cy='12.5' r='12.5' fill='white'/></svg>") 12.5 12.5, auto;
 } */
 
+/* only for screens larger than phone size */
+
+/* @media (min-width: 767px) { */
+
 .button {
     width: 8vw;
     height: 8vw;
@@ -140,7 +144,9 @@ canvas {
     right: 10px;
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="lightgray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22px" height="22px"><path d="M6 9l6 6 6-6" /></svg>'), auto;
 }
-  
+
+
+
 
 /* for normal display */
 .book {
@@ -203,8 +209,78 @@ canvas {
     width:80vw;
 }
 
+.button {
+  width: 10vw;
+  height: 10vw;
+}
+
 }
   
+/* mobile devices */
+
+@media (max-width: 767px) {
+
+  .bg{
+    height:1500vh;
+  }
+
+  .book{
+    width:75vw;
+}
+
+/* .button-container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  border-radius: 0;
+}
+
+.button {
+  flex: 1;
+  height: 100%;
+  border: none;
+  color:black;
+  background-color: black;
+  opacity:0.7;
+}
+
+#scroll-up-button {
+  background-color: rgb(100, 100, 100); /* add a background color */
+  /* left: 10px;
+} */
+
+.button {
+  width: 50vw;
+  height: 15vh;
+  border-radius:0;
+  opacity:0.3;
+}
+
+#scroll-up-button {
+  left: 0px;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="lightgray" width="33px" height="33px"><path d="M12 8.6L6.7 14 8 15.3 12 11.3 16 15.3 17.3 14 12 8.6z"/><path d="M0 0h24v24H0V0z" fill="none"/></svg>'), auto;
+}
+
+#scroll-down-button {
+  right: 0px;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="lightgray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="22px" height="22px"><path d="M6 9l6 6 6-6" /></svg>'), auto;
+}
+
+.instructions {
+  display:none;
+}
+
+p {
+  font-size:2.5vh;
+}
+
+
+}
+
+
+
 
 
 /* make text glow while selecting */

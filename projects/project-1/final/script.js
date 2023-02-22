@@ -23,11 +23,12 @@ blinkDivs.forEach(function(blinkDiv) {
   }, 100);
 });
 
-//  disable mouse scroll
-document.addEventListener('wheel', function(event) {
+//  disable mouse scroll for computer screens
+if (window.innerWidth > 767) {
+  document.addEventListener('wheel', function(event) {
     event.preventDefault();
   }, { passive: false });
-
+}
 
 //  scrollbutton
 
@@ -36,14 +37,14 @@ const scrollDownButton = document.getElementById('scroll-down-button');
 
 scrollUpButton.addEventListener('click', function() {
   window.scrollBy({
-    top: -window.innerHeight / 3,
+    top: -window.innerHeight / 2,
     behavior: 'smooth'
   });
 });
 
 scrollDownButton.addEventListener('click', function() {
   window.scrollBy({
-    top: window.innerHeight / 3,
+    top: window.innerHeight / 2,
     behavior: 'smooth'
   });
 });
