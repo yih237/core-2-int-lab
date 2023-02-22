@@ -54,7 +54,7 @@ canvas {
 /* background color and gradient */
 
 .bg {
-    height: 850vh; 
+    height: 900vh; 
     background: linear-gradient(to bottom, rgb(227, 227, 227), #000, rgb(227,227,227));
     opacity:0.9;    
 }
