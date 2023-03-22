@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Draggable</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+.draggable {
+  position: absolute;
+  background-color: #f7f7f7;
+  border: 2px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  width: 240px;
+  height: 240px;
+  cursor: move;
+  padding: 24px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.4;
+  text-align: center;
+  box-sizing: border-box;
+}
+    </style>
+</head>
+
+<body>
+        <div class="draggable" id="draggable1">Drag me</div>
+        <div class="draggable" id="draggable2">Drag me</div>
+        <div class="draggable" id="draggable3">Drag me</div>
+        <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.11/lib/draggable.js"></script>
+        <script>
+    const draggable1 = new Draggable.default(document.getElementById('draggable1'));
+    const draggable2 = new Draggable.default(document.getElementById('draggable2'));
+    const draggable3 = new Draggable.default(document.getElementById('draggable3'));
+</script>
+      
+</body>
+</html>
