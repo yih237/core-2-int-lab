@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive Website</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <div class="body">
+        <div class="filters">
+            <label for="language-select">Language:</label>
+            <select id="language-select">
+              <option value="all">All</option>
+              <option value="English">English</option>
+              <option value="Chinese">Chinese</option>
+            </select>
+          
+            <label for="type-select">Type:</label>
+            <select id="type-select">
+              <option value="all">All</option>
+              <option value="Facts">Facts</option>
+              <option value="Cute">Cute</option>
+              <option value="Cold joke">Cold joke</option>
+              <option value="Dirty">Dirty</option>
+              <option value="Thought provoking">Thought provoking</option>
+            </select>
+          
+            <label for="category-select">Category:</label>
+            <select id="category-select">
+              <option value="all">All</option>
+              <option value="Photo">Photo</option>
+              <option value="Twitter">Twitter</option>
+              <option value="Cartoon">Cartoon</option>
+              <option value="Movie">Movie</option>
+            </select>
+          </div>
+            <div class="container">
+                <div class="grid">
+                    <div class="cell" data-language="English" data-type="Facts" data-category="Photo">
+                        <img src="./memes/banksecurity.png" class="responsive-image" alt="bank security cameras" data-description="This is so funny because for many different reasons the security cameras cannot be that clear, and someone that close from the camera would be bluured. The camera quality, lighting, and motion of security cameras often result in blurry footage. Astrology photos, on the other hand, are typically taken under controlled conditions using high-quality equipment." data-id="35">
+                      </div>
+                      <div class="cell" data-language="English" data-type="Cute" data-category="Twitter">
+                        <img src="./memes/conspiracy.png" class="responsive-image" alt="a conspiracy theory" data-description="This meme is just too cute! I love how it makes the pyramid make sense all of a sudden. It's so cute how it takes something as ancient and mysterious as pyramids and adds a little whimsy with a cat.I love cats, they are the rightful gods lol." data-id="36">
+                      </div>
+                      <div class="cell" data-language="English" data-type="Cold joke" data-category="Photo">
+                        <img src="./memes/protection.png" class="responsive-image" alt="protection" data-description="This meme is an ironic meme that has nothing and everything to do with deodorants. It plays around with the &quot;full-protection&quot; tag on deororants and juxtaposes it with a police/gangster situation at school, saying &quot;those bastards lied to me&quot;. This left me wondering - many deodorant companies promise &quot;full protection&quot; as a way to convince us they'll keep us comfortable and safe. However, real-world challenges and dangers can make such promises seem empty." data-id="37">
+                      </div>
+                      <div class="cell" data-language="Chinese" data-type="Cold joke" data-category="Cartoon">
+                        <img src="./memes/geiyepa.png" class="responsive-image" alt="gei ye pa" data-id="38" data-description="This is related to a Hong Kong cartoon character called Mai Dou. Mai Dou is a cute little pig who has captured the hearts of many with his mischievous adventures and adorable antics. This meme is based on a scene in the show where Mai Dou does something funny or outrageous. It's captioned with a witty or funny comment, juxtaposing Mai Dou and the ironic or absurd message.">
+                      </div>
+                      <div class="cell" data-language="English" data-type="Cold joke" data-category="Photo">
+                        <img src="./memes/cheesy.png" class="responsive-image" alt="cheesy" data-id="39" data-description="This is purely a homophonic meme, but I always laugh while looking at it. What I got from this is that we can connect with each other in new and unexpected ways by playing with the nuances and quirks of our words and phrases.">
+                              </div>
+          </div>
+        </div>
+      </div>
+      <script src="memes.js"></script>
+        </body>
+</html>
