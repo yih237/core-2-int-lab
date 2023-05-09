@@ -1,0 +1,311 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Union Square Park</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="icon" href="../img/logo.png">
+</head>
+
+
+<body>
+    <div class="topbar btn-group fn-clear">
+        <div class="btn ">
+            <a href="javascript:;" class="btns link">Union Square Park</a>
+            <ul>
+                <li><a href="./nicholas.html">St. Nicholas Park</a></li>
+                <li><a href="./madison.html">Madison Square Park</a></li>
+                <li><a href="./ftpark.html">Fort Tryon Park</a></li>
+            </ul>
+        </div>
+        <div class="btn">
+            <a href="../sighting.html" class="btns link">Submit sighting</a>
+        </div>
+        <div class="btn">
+            <a href="../index.html" class="btns">
+                <img src="../img/logo.png" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="content2">
+        <h1>Activities</h1>
+        <div class="list fn-clear">
+            <div class="box-container">
+            <div class="fl box">
+                <div class="con con1">
+                    <h2>Foraging</h2>
+                    <ul class="fn-clear " id="Foraging">
+                    </ul>
+                </div>
+                <div class="con con2">
+                    <h2>Climbing</h2>
+                    <ul class="fn-clear Climbing"></ul>
+                </div>
+
+            </div>
+            <div class="fl box">
+                <div class="con con1">
+                    <h2>Eating + Foraging</h2>
+                    <ul class="fn-clear EatingAndForaging"></ul>
+                </div>
+
+                          </div>
+            <div class="fl box">
+                <div class="con con2">
+                    <h2> Digging</h2>
+                    <ul class="fn-clear Digging">
+                    </ul>
+                </div>
+
+                <div class="con con2">
+                    <h2>Running + Digging</h2>
+                    <ul class="fn-clear RunningAndDigging"></ul>
+                </div>
+                
+                </div>
+                            </div>
+        </div>
+    </div>
+    <div id="instructionsShadowbox" class="shadowbox">
+        <div class="card">
+          <span id="closeBtnInstructions" class="close">&times;</span>
+          <h2>Instructions</h2>
+          <p>
+            The Squirrels in each individual park are put into groups by the activities they were doing when they were spotted by volunteers. <br>Each squirrel shows their color and highlight color, click on each squirrel for more information about them.
+            <!-- Add your instructions here -->
+          </p>
+        </div>
+    </div>
+
+    <div id="shadowbox" class="shadowbox">
+        <div class="card">
+        <span class="close" id="closeBtn">&times;</span>
+
+        <p></p>
+    </div>
+</div>
+
+    <script>
+                // Define the shadowtxt function outside the fetch block
+                function shadowtxt(txt) {
+    let result = data.find((ele) => {
+        return ele['Squirrel ID'] == txt;
+    });
+    let html = `
+        <h2> ${result['Squirrel ID']}</h2>
+        <ul>
+            <li>Primary Fur Color: ${result['Primary Fur Color']}</li>
+            <li>Highlights in Fur Color: ${result['Highlights in Fur Color']}</li>
+            <li>Location: ${result['Location']}</li>
+            <li>Activities: ${result['Activities']}</li>
+            <li>Interactions with Humans: ${result['Interactions with Humans']}</li>
+            <li>Other Notes or Observations: ${result['Other Notes or Observations']}</li>
+        </ul>
+    `;
+    document.querySelector('#shadowbox p').innerHTML = html;
+    document.querySelector('#shadowbox').style.display = 'flex';
+}
+
+        
+// Create an empty array called 'data'.
+let data = [];
+
+// Fetch data from a JSON file and process it.
+fetch('./union.json')
+    .then(response => response.json())
+    .then((res) => {
+        // Log the data to the console.
+        console.log(res)
+        // Assign the response data to the 'data' array.
+        data = res;
+        // Filter the data to get all items with the 'Activities' property set to 'Foraging'.
+        let Foraging = res.filter((ele) => {
+            return ele.Activities == 'Foraging'
+        })
+        // Insert the filtered data into the HTML element with ID 'Foraging'.
+        document.querySelector('#Foraging').innerHTML = showlist(Foraging)
+        // Filter the data to get all items with the 'Activities' property set to 'Digging'.
+        let Digging = res.filter((ele) => {
+            return ele.Activities == 'Digging'
+        })
+        // Insert the filtered data into the HTML element with class 'Digging'.
+        document.querySelector('.Digging').innerHTML = showlist(Digging)
+        // Filter the data to get all items with the 'Activities' property set to 'Eating, Foraging'.
+        let EatingAndForaging = res.filter((ele) => {
+            return ele.Activities == 'Eating, Foraging'
+        })
+        // Insert the filtered data into the HTML element with class 'EatingAndForaging'.
+        document.querySelector('.EatingAndForaging').innerHTML = showlist(EatingAndForaging)
+        // Filter the data to get all items with the 'Activities' property set to 'Climbing'.
+        let Climbing = res.filter((ele) => {
+            return ele.Activities == 'Climbing'
+        })
+        // Insert the filtered data into the HTML element with class 'Climbing'.
+        document.querySelector('.Climbing').innerHTML = showlist(Climbing)
+// Filter the data to get all items with the 'Activities' property set to 'Running, Digging'.
+let RunningAndDigging = res.filter((ele) => {
+    return ele.Activities == 'Running, Digging'
+})
+// Insert the filtered data into the HTML element with class 'RunningAndDigging'.
+document.querySelector('.RunningAndDigging').innerHTML = showlist(RunningAndDigging)
+    })
+
+
+// Define a function called 'showlist' that takes an array of data as input and generates HTML code.
+
+function showlist(data) {
+    console.log(data)
+    var html = '';
+    // Loop through the input data and generate HTML code for each item.
+    data.forEach(ele => {
+        html += `
+<li class='fl'>
+    <a href="javascript:;" onclick="(function(event) { shadowtxt('${ele['Squirrel ID']}', event) })(event)">
+        <img class='goods' src=${ele["Primary Fur Color"] == "Gray" ? "../img/Vector.png" : (ele["Primary Fur Color"] == "Cinnamon" ? "../img/Vector3.png" : (ele["Primary Fur Color"] == "Black" ? "../img/Vector2.png" : "" ))} alt="">
+        <i class='${ele["Highlights in Fur Color"]}'></i>
+    </a>
+</li>
+`
+    });
+    return html
+}
+
+
+
+        // 获取所有具有“btn”类的元素
+        var btns = document.querySelectorAll(".topbar .btn");
+        for (var i = 0; i < btns.length; i++) {
+            var btn = btns[i];
+            var dropdown = btn.querySelector("ul");
+            if (dropdown) {
+                btn.addEventListener("click", function () {
+                    this.classList.toggle("show");
+                });
+            }
+        }
+        //shadowbox
+
+        
+
+        document.querySelector('#shadowbox').addEventListener('click', function (e) {
+            if (e.target === this || e.target.parentElement === this) {
+                e.preventDefault();
+                document.querySelector('#shadowbox').style.display = 'none';
+            }
+        })
+
+        document.querySelector('#closeBtn').addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector('#shadowbox').style.display = 'none';
+        })
+
+
+        // index
+// Check if the element exists before attaching an event listener
+if (document.querySelector("#furColorsIcon")) {
+    document.querySelector("#furColorsIcon").addEventListener("click", function () {
+        showColorInfo("furColorsIcon");
+    });
+}
+
+if (document.querySelector("#furColorsIcon2")) {
+    document.querySelector("#furColorsIcon2").addEventListener("click", function () {
+        showColorInfo("furColorsIcon2");
+    });
+}
+
+if (document.querySelector("#color1")) {
+    document.querySelector("#color1").addEventListener("click", function () {
+        showColorInfo("color1");
+    });
+}
+
+if (document.querySelector("#color2")) {
+    document.querySelector("#color2").addEventListener("click", function () {
+        showColorInfo("color2");
+    });
+}
+
+if (document.querySelector("#color3")) {
+    document.querySelector("#color3").addEventListener("click", function () {
+        showColorInfo("color3");
+    });
+}
+
+if (document.querySelector("#color4")) {
+    document.querySelector("#color4").addEventListener("click", function () {
+        showColorInfo("color4");
+    });
+}
+
+        // Function to display the color information in the shadowbox
+        function showColorInfo(colorId) {
+            let colorInfo = "";
+
+            // Define the information for each color and the image
+            switch (colorId) {
+                case "furColorsIcon":
+                    colorInfo = "Gray.";
+                    break;
+                case "furColorsIcon2":
+                    colorInfo = "Black.";
+                    break;
+                case "color1":
+                    colorInfo = "No Highlight.";
+                    break;
+                case "color2":
+                    colorInfo = "Gray.";
+                    break;
+                case "color3":
+                    colorInfo = "Cinnamon.";
+                    break;
+                case "color4":
+                    colorInfo = "Black.";
+                    break;
+            }
+
+            // Update the shadowbox content and display it
+            document.querySelector("#shadowbox p").innerHTML = colorInfo;
+            document.querySelector("#shadowbox").style.display = "flex";
+        }
+
+
+        (function () {
+            if (document.readyState === 'loading') {
+                document.addEventListener("DOMContentLoaded", function () {
+                    document.querySelector("#instructionsShadowbox").style.display = "flex";
+                });
+            } else {
+                document.querySelector("#instructionsShadowbox").style.display = "flex";
+            }
+        })();
+
+        // Show the instructions shadowbox when the page loads
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector("#instructionsShadowbox").style.display = "flex";
+        });
+
+        // Close the instructions shadowbox when clicking outside or on the close button
+        document.querySelector("#instructionsShadowbox").addEventListener("click", function (e) {
+            if (e.target === this || e.target.parentElement === this) {
+                e.preventDefault();
+                document.querySelector("#instructionsShadowbox").style.display = "none";
+            }
+        });
+
+        document.querySelector("#closeBtnInstructions").addEventListener("click", function (e) {
+            e.preventDefault();
+            document.querySelector("#instructionsShadowbox").style.display = "none";
+        });
+
+
+    </script>
+</body>
+
+</html>

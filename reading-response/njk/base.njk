@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Typography and the Screen</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="/core-2-int-lab/all.css">
+    <link rel="stylesheet" href="/core-2-int-lab/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div id="defaultcanvas" class="container">
+      <nav id="navbar" class="text">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a  href="../index.html"  title="Home">Home</a></li>
+            <li><a  href="../projects/index.html" title="Projects">Projects</a></li>
+            <li><a  href="../exercises/index.html" title="Exercises">Exercises</a></li>
+            <li><a  href="../sessions/index.html"  title="Sessions">Sessions</a></li>
+            <li><a  class="nav-current" title="Readings">Readings</a></li>
+            <li><a  href="../cd-lecture/index.html" title="Lectures">Lectures</a></li>  </ul>
+  
+  <div class="clear"></div></nav>
+</nav>
+
+    <div class="title">{{ title }}</div>
+    <section>
+      <div class="subtitle">
+        Response to:<span><a href="http://art.teleportacia.org/observation/vernacular/" target="_blank">A Vernacular Web
+        </a></span> by
+        <span class="author">
+            {{ author }}</span>
+      </div>
+      <div class="response">
+      <p>
+                    {{ content | safe }}
+      </p>
+    </div>
+    </section>
+  </div>
+  </body>
+</html>

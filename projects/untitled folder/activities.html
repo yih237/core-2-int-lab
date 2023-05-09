@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/core-2-int-lab/projects/project-3/css/base.css">
+    <link rel="stylesheet" href="/core-2-int-lab/projects/project-3/css//index.css">
+</head>
+
+<body>
+    <div class="topbar btn-group fn-clear">
+        <div class="btn ">
+            <a href="javascript:;" class="btns link">Fort Tryon Park</a>
+            <ul>
+                <li><a href="">xxx Park</a></li>
+                <li><a href="">xxx Park</a></li>
+                <li><a href="">xxx Park</a></li>
+            </ul>
+        </div>
+        <div class="btn">
+            <a href="javascript:;" class="btns link">Activities</a>
+            <ul>
+                <li><a href="./fur-colors.html">Fur Colors</a></li>
+                <li><a href="">Interactions</a></li>
+                <li><a href="">All</a></li>
+            </ul>
+        </div>
+        <div class="btn">
+            <a href="../sighting.html" class="btns link">Submit sighting</a>
+        </div>
+        <div class="btn">
+            <a href="" class="btns">
+                <img src="/core-2-int-lab/projects/project-3/img/logo.png" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="content2">
+        <h1>Activities</h1>
+        <div class="list fn-clear">
+            <div class="fl box">
+                <div class="con con1">
+                    <h2>Foraging</h2>
+                    <ul class="fn-clear " id="Foraging">
+
+                    </ul>
+                </div>
+                <div class="con con2">
+                    <h2>Foraging + Eating</h2>
+                    <ul class="fn-clear ForagingAndEating">
+
+                    </ul>
+                </div>
+            </div>
+            <div class="fl box">
+                <div class="con con2">
+                    <h2>Climbing + Foraging</h2>
+                    <ul class="fn-clear ClimbingAndForaging"></ul>
+                </div>
+                <div class="con con1">
+                    <h2>Eating</h2>
+                    <ul class="fn-clear Eating"></ul>
+                </div>
+            </div>
+            <div class="fl box">
+                <div class="con con1">
+                    <h2>Climbing</h2>
+                    <ul class="fn-clear Climbing"></ul>
+                </div>
+                <div class="con con2">
+                    <h2>Eating + Climbing</h2>
+                    <ul class="fn-clear EatingAndClimbing"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="shadowbox">
+        <div class="content">
+            <p></p>
+        </div>
+    </div>
+    <script>
+        let data = [];
+        fetch('./tyronpark.json')
+            .then(response => response.json())
+            .then((res) => {
+                console.log(res)
+                data = res;
+                let Foraging = res.filter((ele) => {
+                    return ele.Activities == 'Foraging'
+                })
+                document.querySelector('#Foraging').innerHTML = showlist(Foraging)
+                let ForagingAndEating = res.filter((ele) => {
+                    return ele.Activities == 'Foraging, Eating'
+                })
+                document.querySelector('.ForagingAndEating').innerHTML = showlist(ForagingAndEating)
+                let ClimbingAndForaging = res.filter((ele) => {
+                    return ele.Activities == 'Climbing, Foraging'
+                })
+                document.querySelector('.ClimbingAndForaging').innerHTML = showlist(ClimbingAndForaging)
+                let Climbing = res.filter((ele) => {
+                    return ele.Activities == 'Climbing'
+                })
+                document.querySelector('.Climbing').innerHTML = showlist(Climbing)
+                let Eating = res.filter((ele) => {
+                    return ele.Activities == 'Eating'
+                })
+                document.querySelector('.Eating').innerHTML = showlist(Eating)
+                let EatingAndClimbing = res.filter((ele) => {
+                    return ele.Activities == 'Eating, Digging'
+                })
+                document.querySelector('.EatingAndDigging').innerHTML = showlist(EatingAndDigging)
+            })
+
+
+        function showlist(data) {
+            console.log(data)
+            var html = '';
+            data.forEach(ele => {
+                html += `
+                <li class='fl'>
+                    <a href="javascript:;" onclick="shadowtxt('${ele['Squirrel ID']}')">
+                        <img class='goods' src=${ele["Primary Fur Color"] == "Gray" ? "/core-2-int-lab/projects/project-3/img/Vector.png" : "/core-2-int-lab/projects/project-3/img/Vector2.png"} alt="">
+                        <i class='${ele["Highlights in Fur Color"]}'></i>
+                    </a>
+                </li>
+                `
+            });
+            return html
+            // document.querySelector('.list ul').innerHTML = html;
+        }
+
+        // 获取所有具有“btn”类的元素
+        var btns = document.querySelectorAll(".topbar .btn");
+        for (var i = 0; i < btns.length; i++) {
+            var btn = btns[i];
+            var dropdown = btn.querySelector("ul");
+            if (dropdown) {
+                btn.addEventListener("click", function () {
+                    this.classList.toggle("show");
+                });
+            }
+        }
+        function shadowtxt(txt) {
+    console.log(txt);
+    let result = data.find((ele) => {
+        return ele['Squirrel ID'] == txt;
+    })
+    let html = `
+        <ul>
+            <li>Primary Fur Color: ${result['Primary Fur Color']}</li>
+            <li>Highlights in Fur Color: ${result['Highlights in Fur Color']}</li>
+            <li>Location: ${result['Location']}</li>
+            <li>Activities: ${result['Activities']}</li>
+            <li>Interactions with Humans: ${result['Interactions with Humans']}</li>
+            <li>Other Notes or Observations: ${result['Other Notes or Observations']}</li>
+        </ul>
+    `
+    document.querySelector('#shadowbox p').innerHTML = html;
+    document.querySelector('#shadowbox').style.display = 'block'
+}
+
+document.querySelector('#shadowbox').addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector('#shadowbox').style.display = 'none'
+})
+    </script>
+</body>
+
+</html>

@@ -1,36 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title>Project 1</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="/core-2-int-lab/all.css">
-    <link rel="stylesheet" href="/core-2-int-lab/index.css">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.css"
+    />
+    <link rel="stylesheet" href="./fonts/stylesheet.css" />
+    <link rel="stylesheet" href="./fonts/stylesheet2.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <script src="./assets/jq.min.js"></script>
+    <title>Memes</title>
   </head>
   <body>
-    <div id="defaultcanvas" class="container">
-      <nav id="navbar" class="text">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a  href="/core-2-int-lab/index.html"  title="Home">Home</a></li>
-          <li><a  class="nav-current"  title="Projects">Projects</a></li>
-          <li><a  href="/core-2-int-lab/exercises/index.html" title="Exercises">Exercises</a></li>
-          <li><a  href="/core-2-int-lab/assignments/index.html" title="Sessions">Assignments</a></li>
-          <li><a  href="/core-2-int-lab/reading-response/index.html" title="Readings">Readings</a></li>
-
-  </ul>
-  <div class="clear"></div></nav>
-</nav>
-<div class="title">
-    Project 1
-</div>
-    <div class="drafts">
-        <section class="drafts">
-            <a href="https://airtable.com/app2rEWRgawu5NIYk/tbl1IlmJPBeD7tLN5/viwwMolPGZSMvscjY?blocks=hide" class="links">Airtable</a>
-            <a href="../project-2/draggable.html" class="links" >Draggable element trial</a>
-            
-        </section>
+    <div class="head">
+      <div class="tips-wrap">
+        <div class="tips">
+          <h1>memes.memes.memes.memes.</h1>
+          <h1>memes.memes.memes.memes.</h1>
+        </div>
+        <div class="tips">
+          <h1>memes.memes.memes.memes.</h1>
+          <h1>memes.memes.memes.memes.</h1>
+        </div>
+        <div class="tips">
+          <h1>memes.memes.memes.memes.</h1>
+          <h1>memes.memes.memes.memes.</h1>
+        </div>
+        <div class="tips">
+          <h1>memes.memes.memes.memes.</h1>
+          <h1>memes.memes.memes.memes.</h1>
+        </div>
+        <div class="tips">
+          <h1>memes.memes.memes.memes.</h1>
+          <h1>memes.memes.memes.memes.</h1>
+        </div>
+      </div>
     </div>
-</div>
-</body>
+    <div class="mid">
+      <div class="search-box">
+        <div class="selct-value" id="A">Language</div>
+        <ul class="selct-option" type="Language">
+          <li val="English">English</li>
+          <li val="Chinese">Chinese</li>
+        </ul>
+      </div>
+      <div class="search-box">
+        <div class="selct-value" id="B">Category</div>
+        <ul class="selct-option" type="Category">
+          <li val="Art">Art</li>
+          <li val="Cartoon">Cartoon</li>
+          <li val="Celebrity">Celebrity</li>
+          <li val="Chat">Chat</li>
+          <li val="Movie">Movie</li>
+          <li val="Photo">Photo</li>
+          <li val="Twitter">Twitter</li>
+        </ul>
+      </div>
+      <div class="search-box">
+        <div class="selct-value" id="C">Type</div>
+        <ul class="selct-option" type="Type">
+          <li val="Cold joke">Cold joke</li>
+          <li val="Cute">Cute</li>
+          <li val="Dirty">Dirty</li>
+          <li val="Facts">Facts</li>
+          <li val="Thought provoking" style="line-height: 1; padding: 8px 0">
+            Thought<br />
+            provoking
+          </li>
+        </ul>
+      </div>
+      <div class="search-box">
+        <div class="selct-value" style="z-index: 8" id="rest">Reset</div>
+      </div>
+    </div>
+    <div class="flex">
+      <div class="inner"></div>
+    </div>
+    <div class="movebtn" id="rec"></div>
+    <div class="popup">
+      <i class="fa-solid fa-xmark close" id="close"></i>
+      <div class="popup-card">
+        <div class="card">
+          <div class="card-img rotate-com">
+            <img src="./memes/3.jpg" />
+          </div>
+          <div class="card-info rotate-com">
+            <div>Title:</div>
+            <div>Year:</div>
+            <div>Language:</div>
+            <div>Category:</div>
+          </div>
+        </div>
+        <div class="movebtn movebtn2" id="rec2"></div>
+      </div>
+    </div>
+    <div class="intro">
+      <div class="cricle">
+        <i
+          class="fa-solid fa-arrow-left-long"
+          style="
+            position: absolute;
+            top: -20px;
+            left: 80px;
+            font-size: 40px;
+            transform: rotate(-15deg);
+          "
+        ></i>
+      </div>
+      <p class="cricle-tips">
+        click on meme for more information about meme<br />
+      </p>
+      <img src="./assets/11111.png" class="scroll" />
+      <div class="cricle-tips cricle-tips2">
+        click button for<br />
+        random meme<i
+          class="fa-solid fa-arrow-left-long"
+          style="font-size: 40px; position: absolute; top: 0; right: -30px"
+        ></i>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  $(document).ready(function () {
+    let allData = []
+    let moved = false
+    let condition = {
+      Language: '',
+      Category: '',
+      Type: ''
+    }
+    // get json
+    fetch('./assets/face.json')
+      .then(function (response) {
+        return response.json()
+      })
+      .then(function (data) {
+        allData = data
+        buildHtml(allData)
+      })
+    function buildHtml(data) {
+      let html = data
+        .map(
+          (e) => `<div class="item" id="${e.id}">
+            <img src="${e.Memes}" />
+            </div>`
+        )
+        .join('')
+      $('.inner').html(html)
+    }
+    $('.inner').on('click', '.item', function () {
+      const id = $(this).attr('id')
+      let data = allData.find((e) => e.id == id)
+      showCards(data)
+      $('#rec').hide()
+    })
+    //
+    function showCards(data) {
+      $('.popup').show()
+      $('.card-img img').attr('src', data.Memes)
+      const html = ` <div>Title:${data.Title}</div>
+            <div>Year:${data.Year}</div>
+            <div>Language:${data.Language}</div>
+            <div>Category:${data.Category}</div>`
+      $('.card-info').html(html)
+    }
+    //
+    $('#rec').mouseup(function () {
+      var item = allData[Math.floor(Math.random() * allData.length)]
+      showCards(item)
+      $(this).hide()
+    })
+    var div = document.getElementById('rec')
+    dragElement(div)
+    function dragElement(elmnt) {
+      var pos1 = 0,
+        pos2 = 0,
+        pos3 = 0,
+        pos4 = 0
+      if (document.getElementById(elmnt.id + 'header')) {
+        /* if present, the header is where you move the DIV from:*/
+        document.getElementById(elmnt.id + 'header').onmousedown = dragMouseDown
+      } else {
+        /* otherwise, move the DIV from anywhere inside the DIV:*/
+        elmnt.onmousedown = dragMouseDown
+      }
+
+      function dragMouseDown(e) {
+        e = e || window.event
+        e.preventDefault()
+        // get the mouse cursor position at startup:
+        pos3 = e.clientX
+        pos4 = e.clientY
+        document.onmouseup = closeDragElement
+        // call a function whenever the cursor moves:
+        document.onmousemove = elementDrag
+      }
+
+      function elementDrag(e) {
+        e = e || window.event
+        e.preventDefault()
+        // calculate the new cursor position:
+        pos1 = pos3 - e.clientX
+        pos2 = pos4 - e.clientY
+        pos3 = e.clientX
+        pos4 = e.clientY
+        // set the element's new position:
+        elmnt.style.top = elmnt.offsetTop - pos2 + 'px'
+        elmnt.style.left = elmnt.offsetLeft - pos1 + 'px'
+        $('#rec').off('mouseup')
+      }
+
+      function closeDragElement() {
+        /* stop moving when mouse button is released:*/
+        document.onmouseup = null
+        document.onmousemove = null
+        $('#rec').mouseup(function () {
+          var item = allData[Math.floor(Math.random() * allData.length)]
+          showCards(item)
+          $(this).hide()
+        })
+      }
+    }
+    $('#close').click(function () {
+      $('.popup').hide()
+      $('#rec').show()
+    })
+    $('.card').click(function () {
+      if ($(this).hasClass('rotate')) {
+        $(this).removeClass('rotate')
+      } else {
+        $(this).addClass('rotate')
+      }
+    })
+    //filter
+    $('.selct-option li').click(function () {
+      const value = $(this).attr('val')
+      let pars = $(this).parent('.selct-option')
+      const type = pars.attr('type')
+      pars.siblings().text(value)
+      condition[type] = value
+      let data = allData.filter((e) => {
+        let rst = condition.Language == '' || e.Language == condition.Language
+        let rst2 = condition.Category == '' || e.Category == condition.Category
+        let rst3 = condition.Type == '' || e.Type == condition.Type
+        return rst && rst2 && rst3
+      })
+      buildHtml(data)
+    })
+    $('#rest').click(function () {
+      condition = {
+        Language: '',
+        Category: '',
+        Type: ''
+      }
+      $('#A').text('Language')
+      $('#B').text('Category')
+      $('#C').text('Type')
+      buildHtml(allData)
+    })
+    $('#rec2').click(function () {
+      var item = allData[Math.floor(Math.random() * allData.length)]
+      showCards(item)
+    })
+    $('.intro').click(function () {
+      $(this).remove()
+    })
+  })
+</script>
