@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <!--<meta name=description content="This site was generated with Anima. www.animaapp.com"/>-->
+    <!-- <link rel="shortcut icon" type=image/png href="https://animaproject.s3.amazonaws.com/home/favicon.png" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="og:type" content="website" />
+    <meta name="twitter:card" content="photo" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="icon" href="../img/logo.png">
+
+  </head>
+  <body>
+    <div class="container-center-horizontal">
+      <div class="container screen">
+        <div class="overlap-group">
+          <h1 class="title">The NYC Squirrel Census</h1>
+          <img class="squirrelicon" src="img/group.png" alt="Group" />
+        </div>
+      </div>
+    </div>
+    <a href="#" id="scrollBtn">
+      <img class="down" src="img/vector-5.svg" alt="Vector 5" />
+    </a>
+
+    <div id="nextSection" class="next-section">
+      <div class="container-center-horizontal">
+        <div class="page2">
+          <div>
+            <img class="vector-1" src="img/vector-1.svg" alt="Vector" />
+            <h1>About</h1>
+            <p class="squirrel-census">
+              The Squirrel Census is a multimedia science, design, and
+              storytelling project focusing on the Eastern gray (Sciurus
+              carolinensis). They count squirrels and present their findings to
+              the public. The methodology was less focused on total squirrel
+              numbers per hectare and more attuned to the stories — of
+              squirrels, humans, and parks.
+            </p>
+          </div>
+          <div>
+            <img class="vector-1" src="img/vector-1.svg" alt="Vector" />
+            <h1>Contents</h1>
+            <p class="contents-container">
+              The contents of this webpage include visualizations of the data
+              provided by the volunteer squirrel sighters about squirrels. The
+              different data include the fur color, the highlight fur color, the
+              interaction of the squirrels with humans, and the activities that
+              they are doing.
+            </p>
+          </div>
+          <div>
+            <img class="vector-1" src="img/vector-1.svg" alt="Vector" />
+            <h1>Instructions</h1>
+            <p class="squirrel-info">
+              You can see the squirrel sighting information in different
+              locations throughout New York City and the general data of
+              squirrels in New York City. This website is intended for squirrel
+              lovers in NYC and anyone that is interested in these cute, flurry
+              creatures!!
+            </p>
+          </div>
+          <div style="margin: 86px auto;">
+            <img class="vector-5" src="img/vector-5-1.svg" alt="Vector 5" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+// scroll button
+document.getElementById('scrollBtn').addEventListener('click', function (event) {
+  const scrollBtn = document.getElementById('scrollBtn');
+  const nextSection = document.getElementById('nextSection');
+
+  // Check if the clickCount attribute exists, if not, set it to 0
+  if (!scrollBtn.getAttribute('data-clickCount')) {
+    scrollBtn.setAttribute('data-clickCount', 0);
+  }
+
+  // Retrieve the click count
+  let clickCount = parseInt(scrollBtn.getAttribute('data-clickCount'));
+
+  if (clickCount === 0) {
+    event.preventDefault(); // Prevent the default anchor click behavior
+    nextSection.scrollIntoView({ behavior: 'smooth' });
+  } else {
+    scrollBtn.setAttribute('href', './parks/ftpark.html');
+  }
+
+  // Increment the click count
+  clickCount++;
+  scrollBtn.setAttribute('data-clickCount', clickCount);
+});
+    </script>
+  </body>
+</html>
