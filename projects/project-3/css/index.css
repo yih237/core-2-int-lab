@@ -28,14 +28,17 @@ html {
   border: 1px solid #bf7543;
   box-sizing: border-box;
 }
-.topbar .btn.show ul li:nth-child(even) {
+.topbar .btn.show ul li:hover {
   background-color: #f8e6d6;
 }
-.topbar .btn.show ul li:nth-child(odd) {
+.topbar .btn.show ul li {
   background-color: #bf7543;
 }
-.topbar .btn.show ul li:nth-child(odd) a {
+.topbar .btn.show ul li a {
   color: #fff;
+}
+.topbar .btn.show ul li:hover  a{
+  color: #bf7543;
 }
 .topbar .btn ul {
   display: none;
@@ -85,7 +88,6 @@ html {
   width: 700px;
 }
 
-
 .container .title {
   color: var(--white);
   font-family: var(--font-family-bandeins_strange-boldextended_half);
@@ -101,8 +103,8 @@ html {
 }
 
 .container .squirrelicon {
-  max-width: 95%; 
-  max-height: 95%; 
+  max-width: 95%;
+  max-height: 95%;
   height: 821px;
   position: absolute;
   top: 50%;
@@ -128,7 +130,7 @@ html {
 /* page2 */
 .next-section {
   height: 100vh;
-  width:100vw;
+  width: 100vw;
   /* Add any other styles you need for the next section */
 }
 
@@ -412,7 +414,7 @@ html {
 
 .box-container {
   /* Add CSS for the new container */
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
 }
 
@@ -522,6 +524,7 @@ html {
 
 .shadowbox .card ul {
   list-style-type: none;
+  text-align: left;
   margin: 0;
   padding: 0;
 }
@@ -530,6 +533,7 @@ html {
   width: auto;
   font-size: 16px;
   line-height: 2;
+  padding: 0 20px;
 }
 
 .shadowbox .close {
@@ -618,9 +622,8 @@ input[type='text'] {
   background-color: #ffffff;
   cursor: pointer;
   font-size: 16px;
-  display: block;      /* Set the display property to block */
-  margin: 0 auto; 
-  margin-top: 30px; 
-  padding:10px;
+  display: block; /* Set the display property to block */
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 10px;
 }
-

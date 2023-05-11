@@ -110,8 +110,8 @@ function shadowtxt(txt) {
     let html = `
         <h2> ${result['Squirrel ID']}</h2>
         <ul>
-            <li>Primary Fur Color: ${result['Primary Fur Color']}</li>
-            <li>Highlights in Fur Color: ${result['Highlights in Fur Color']}</li>
+            <li>Primary Fur Color: <span class="tag ${result['Primary Fur Color']}">${result['Primary Fur Color']}</span></li>
+            <li>Highlights in Fur Color: <span class="tag ${result['Highlights in Fur Color']}">${result['Highlights in Fur Color']}</span></li>
             <li>Location: ${result['Location']}</li>
             <li>Activities: ${result['Activities']}</li>
             <li>Interactions with Humans: ${result['Interactions with Humans']}</li>
